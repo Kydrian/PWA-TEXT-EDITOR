@@ -18,7 +18,7 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      new HtmlWebpackPlugin({
+      new HtmlWebpackPlugin({ // Create HTML file that includes a bundled JS file
         template: './index.html',
         title: 'JATE'
       }),
@@ -26,7 +26,7 @@ module.exports = () => {
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
-      new WebpackPwaManifest({
+      new WebpackPwaManifest({ // Create a manifest.json file
         fingerprints: false,
         inject: true,
         name: 'Just Another Text Editor',
